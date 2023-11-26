@@ -2,9 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 import Menu from './Menu';
+import CartIcon from './CartIcon';
 
 const Navbar = () => {
-    const user = false;
+    const user = true;
 
     return (
         <div className="h-12 text-red-500 p-4 flex items-center justify-between border-b-2 border-b-red-500 uppercase lg:px-20 xl:px-40">
@@ -14,7 +15,7 @@ const Navbar = () => {
                 <Link href="/">Contact</Link>
             </div>
             <div className="text-2xl font-bold flex-1 text-center">
-                <Link href="/">Pizzeria</Link>
+                <Link href="/">MILLANO</Link>
             </div>
             <div className="md:hidden">
                 <Menu />
@@ -29,6 +30,7 @@ const Navbar = () => {
                 ) : (
                     <Link href="/orders">Orders</Link>
                 )}
+                <CartIcon />
             </div>
         </div>
     )
