@@ -1,5 +1,6 @@
 import { featuredProducts } from '@/data'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Featured = () => {
@@ -7,7 +8,8 @@ const Featured = () => {
         <div className="snap-x w-screen overflow-x-scroll md:overflow-x-hidden text-red-500">
             <div className="flex flex-wrap w-max md:w-auto">
                 {featuredProducts.map((item) => (
-                    <div
+                    <Link
+                        href={`/product/${item.id}`}
                         key={item.id}
                         className="snap-start w-screen h-[60vh] flex flex-col items-center justify-around p-4 hover:bg-fuchsia-50 transition-all duration-300 md:w-[50vw] xl:w-[33vw] xl:h-[90vh]"
                     >
@@ -24,7 +26,7 @@ const Featured = () => {
                                 Add to Cart
                             </button>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>
